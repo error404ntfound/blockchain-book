@@ -18,6 +18,8 @@ class Blockchain(object):
         return self.chain[-1] if self.chain else None
 
     def new_block(self, previous_hash=None):
+        # Here by declaring block variable as global will give access to the other functions
+        global block
         block = {
             'index': len(self.chain),
             'timestamp': datetime.utcnow().isoformat(),
